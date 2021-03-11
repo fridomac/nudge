@@ -1,15 +1,16 @@
 {
     "title": "Nudge (com.github.macadmins.Nudge)",
     "description": "Preference settings for Nudge",
+    "_version": "1.0",
     "properties": {
         "osVersionRequirements": {
             "title": "OS Version Requirements",
             "description": "Sets the OS Version requirements",
-            "property_order": 5,
             "type": "array",
             "items": {
                 "type": "object",
                 "title": "Update URLs",
+                "description": "A list of arrays, enabling localization of the More Info button URL path. Please see the aboutUpdateURLs wiki article for more information.",
                 "properties": {
                     "aboutUpdateURLs": {
                         "title": "About URLs for Updates",
@@ -28,21 +29,34 @@
                                 }
                             }
                         }
-                    },
-                "majorUpgradeAppPath": {
-                    "title": "Major Upgrade App Path",
-                    "type": "string"
-                },
-                "requiredInstallationDate": {
-                    "title": "Required Installation Date",
-                    "type": "string"
-                },
-                "requiredMinimumOSVersion": {
-                    "title": "Required Minimum OS Version",
-                    "type": "string"
-                }
+                    }
             }    
             }
-        }
+        },
+        "majorUpgradeAppPath": {
+            "title": "Major Upgrade App Path",
+            "type": "string"
+        },
+        "requiredInstallationDate": {
+            "title": "Required Installation Date",
+            "description": "The required installation date for Nudge to enforce the required operating system version.\nNote: You must follow standard a date string as YYYY-MM-DDTHH:MM:SSZ - Example: 2021-01-31T00:00:00Z",
+            "type": "string",
+            "default": ""
+        },
+        "requiredMinimumOSVersion": {
+            "title": "Required Minimum OS Version",
+            "description": "The required minimum operating system version.\n\nNote: When passing versions such as 11.2.0 it will be normalized to 11.2. It is recommended to leave the trailing zero from the version number.",
+            "type": "string",
+            "default": ""
+          },
+        "targetedOSVersions": {
+            "title": "Targeted OS Versions",
+            "description": "The versions of macOS that require a security update. You can specify single version or multiple versions, but they must be within an array.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          }
     }
 }
