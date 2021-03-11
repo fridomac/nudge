@@ -1,0 +1,48 @@
+{
+    "title": "Nudge (com.github.macadmins.Nudge)",
+    "description": "Preference settings for Nudge",
+    "properties": {
+        "osVersionRequirements": {
+            "title": "OS Version Requirements",
+            "description": "Sets the OS Version requirements",
+            "property_order": 5,
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Update URLs",
+                "properties": {
+                    "aboutUpdateURLs": {
+                        "title": "About URLs for Updates",
+                        "type": "array",
+                        "items": {
+                            "title": "Language",
+                            "type": "object",
+                            "properties": {
+                                "_language": {
+                                    "title": "Language Code for Language",
+                                    "type": "string"
+                                },
+                                "aboutUpdateURL": {
+                                    "Title": "About Update URL for Language",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                "majorUpgradeAppPath": {
+                    "title": "Major Upgrade App Path",
+                    "type": "string"
+                },
+                "requiredInstallationDate": {
+                    "title": "Required Installation Date",
+                    "type": "string"
+                },
+                "requiredMinimumOSVersion": {
+                    "title": "Required Minimum OS Version",
+                    "type": "string"
+                }
+            }    
+            }
+        }
+    }
+}
